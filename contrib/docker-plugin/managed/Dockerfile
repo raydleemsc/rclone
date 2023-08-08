@@ -2,7 +2,7 @@ ARG BASE_IMAGE=rclone/rclone:latest
 FROM ${BASE_IMAGE} as binaries
 
 # build plugin image
-FROM alpine:latest
+FROM alpine:3.18.3
 
 # put rclone in /usr/bin, reserve /usr/local/bin for plugin wrappers
 COPY --from=binaries /usr/local/bin/rclone /usr/bin/rclone
